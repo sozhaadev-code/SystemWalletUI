@@ -1,13 +1,39 @@
 .user-dashboard-container {
+  --page-bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --text-main: #000000;
+  --text-sub: #555555;
+  --border-color: #e0e0e0;
+  --marquee-bg: #ffffff;
+  --marquee-text: #333333;
+  --accent-color: #AF28FF; 
+  --chart-tooltip-bg: #2d3748;
+  --chart-tooltip-text: #4ade80;
+  --status-bg: #ffffff;
+  --shadow: 0 8px 25px rgba(0,0,0,0.05);
+  
+  transition: all 0.3s ease;
   padding: 30px;
-  background-color: #f5f7fa;
+  background-color: var(--page-bg);
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  max-width: 1600px;
-  margin: 0 auto;
+  max-width: 100%;
 }
 
-/* --- Top Header (Arralore) --- */
+/* --- DARK Theme Variables --- */
+.user-dashboard-container.dark {
+  --page-bg: #0f172a;       
+  --card-bg: #1e293b;       
+  --text-main: #f8fafc;     
+  --text-sub: #94a3b8;      
+  --border-color: #334155;  
+  --marquee-bg: #1e293b;
+  --marquee-text: #e2e8f0;
+  --status-bg: #1e293b;
+  --shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* --- Page Header & Theme Toggle --- */
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -18,31 +44,49 @@
 .brand-title {
   font-size: 26px;
   font-weight: 800;
-  color: #000;
+  color: var(--text-main);
   letter-spacing: -0.5px;
+}
+
+.theme-toggle-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--border-color);
 }
 
 /* --- Currency Strip --- */
 .currency-strip {
-  background: #fff;
+  background: var(--marquee-bg);
   border-radius: 15px;
   padding: 20px 25px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  box-shadow: var(--shadow);
   margin-bottom: 30px;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color);
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 15px;
 }
 
 .currency-title {
   font-size: 16px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-main);
   margin: 0;
 }
 
-/* Marquee Styling */
 .marquee-wrapper {
   width: 100%;
   overflow: hidden;
@@ -56,37 +100,38 @@
   margin-right: 40px;
   font-weight: 600;
   font-size: 14px;
-  color: #444;
+  color: var(--marquee-text);
 }
 
 .rate-up { color: #10b981; font-weight: 700; }
 .rate-down { color: #ef4444; font-weight: 700; }
 
+/* --- Grid Layout --- */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 1fr 1.8fr 1fr; 
+  grid-template-columns: 1fr 1.8fr 1fr;
   gap: 25px;
   margin-bottom: 30px;
 }
 
-/* Common Card Style */
+/* Card Style */
 .dash-card {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 18px;
   padding: 25px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--border-color);
   position: relative;
   min-height: 340px;
 }
 
-/* Left Card: Balance */
+/* Balance Card */
 .balance-label {
   font-size: 14px;
-  color: #666;
+  color: var(--text-sub);
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -94,7 +139,7 @@
 .balance-amount {
   font-size: 38px;
   font-weight: 800;
-  color: #000;
+  color: var(--text-main);
   margin: 0;
 }
 
@@ -107,7 +152,6 @@
 }
 
 .withdraw-btn {
-  background: #bf2ef0; 
   background: linear-gradient(90deg, #b02df0 0%, #d240f5 100%);
   color: white;
   border: none;
@@ -126,7 +170,7 @@
   transform: translateY(-2px);
 }
 
-/* Middle Card: Chart */
+/* Chart Card */
 .chart-header-row {
   display: flex;
   justify-content: space-between;
@@ -137,12 +181,12 @@
 .currency-select {
   padding: 8px 15px;
   border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
   font-weight: 600;
   font-size: 14px;
   outline: none;
-  background: #fff;
-  color: #333;
+  background: var(--page-bg);
+  color: var(--text-main);
 }
 
 .chart-area {
@@ -157,8 +201,8 @@
   position: absolute;
   top: 35%;
   left: 15%;
-  background: #2d3748;
-  color: #4ade80;
+  background: var(--chart-tooltip-bg);
+  color: var(--chart-tooltip-text);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
@@ -166,30 +210,19 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Right Card: Stats */
+/* Stats Card */
 .stat-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.stat-row:last-child {
-  border-bottom: none;
-}
+.stat-row:last-child { border-bottom: none; }
 
-.stat-label {
-  font-size: 14px;
-  color: #666;
-  font-weight: 600;
-}
-
-.stat-value {
-  font-size: 16px;
-  font-weight: 800;
-  color: #000;
-}
+.stat-label { font-size: 14px; color: var(--text-sub); font-weight: 600; }
+.stat-value { font-size: 16px; font-weight: 800; color: var(--text-main); }
 
 .profit-val {
   color: #ef4444;
@@ -198,20 +231,20 @@
   gap: 5px;
 }
 
-/* --- Request Status Section --- */
+/* Request Status */
 .request-status-container {
-  background: #fff;
+  background: var(--status-bg);
   border-radius: 18px;
   padding: 30px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-  border: 1px solid #f0f0f0;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
 }
 
 .section-title {
   font-size: 18px;
   font-weight: 800;
   margin-bottom: 25px;
-  color: #000;
+  color: var(--text-main);
 }
 
 .status-row {
@@ -221,26 +254,21 @@
   padding-bottom: 10px;
 }
 
-.req-name { font-weight: 700; font-size: 15px; color: #000; }
-.req-amount { font-weight: 800; font-size: 15px; margin-left: 30px; color: #000; }
-.req-date { color: #999; font-size: 13px; margin-left: 30px; font-weight: 500; }
+.req-name { font-weight: 700; font-size: 15px; color: var(--text-main); }
+.req-amount { font-weight: 800; font-size: 15px; margin-left: 30px; color: var(--text-main); }
+.req-date { color: var(--text-sub); font-size: 13px; margin-left: 30px; font-weight: 500; }
 .req-badge { 
-  background: #fff;
-  color: #666;
+  background: var(--page-bg);
+  color: var(--text-sub);
   font-size: 14px; 
   font-weight: 600; 
   margin-right: 20px;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
-.cancel-link {
-  color: #ef4444;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-}
+.cancel-link { color: #ef4444; font-size: 13px; font-weight: 600; cursor: pointer; }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
+  .dashboard-grid { grid-template-columns: 1fr; }
 }
