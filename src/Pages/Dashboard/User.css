@@ -1,0 +1,246 @@
+.user-dashboard-container {
+  padding: 30px;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* --- Top Header (Arralore) --- */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.brand-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #000;
+  letter-spacing: -0.5px;
+}
+
+/* --- Currency Strip --- */
+.currency-strip {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  margin-bottom: 30px;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+}
+
+.currency-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+/* Marquee Styling */
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 40px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #444;
+}
+
+.rate-up { color: #10b981; font-weight: 700; }
+.rate-down { color: #ef4444; font-weight: 700; }
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1fr; 
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+/* Common Card Style */
+.dash-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  min-height: 340px;
+}
+
+/* Left Card: Balance */
+.balance-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.balance-amount {
+  font-size: 38px;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+}
+
+.wallet-3d-icon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 65px;
+  opacity: 1;
+}
+
+.withdraw-btn {
+  background: #bf2ef0; 
+  background: linear-gradient(90deg, #b02df0 0%, #d240f5 100%);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: auto;
+  box-shadow: 0 8px 20px rgba(191, 46, 240, 0.25);
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+.withdraw-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Middle Card: Chart */
+.chart-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.currency-select {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-weight: 600;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  color: #333;
+}
+
+.chart-area {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.chart-tooltip-floating {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  background: #2d3748;
+  color: #4ade80;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Right Card: Stats */
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 800;
+  color: #000;
+}
+
+.profit-val {
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* --- Request Status Section --- */
+.request-status-container {
+  background: #fff;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #000;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.req-name { font-weight: 700; font-size: 15px; color: #000; }
+.req-amount { font-weight: 800; font-size: 15px; margin-left: 30px; color: #000; }
+.req-date { color: #999; font-size: 13px; margin-left: 30px; font-weight: 500; }
+.req-badge { 
+  background: #fff;
+  color: #666;
+  font-size: 14px; 
+  font-weight: 600; 
+  margin-right: 20px;
+}
+.cancel-link {
+  color: #ef4444;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
